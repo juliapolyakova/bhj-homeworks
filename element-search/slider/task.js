@@ -4,6 +4,9 @@ const slideItem = Array.from(document.getElementsByClassName('slider__item'));
 
 let activeSlide = 0;
 
+const dots = Array.from(document.getElementsByClassName('slider__dot'));
+dots[activeSlide].classList.add('slider__dot_active');
+
 next.onclick = function() {
     activeSlide++;
 
@@ -11,12 +14,18 @@ next.onclick = function() {
         slide.className = 'slider__item';
     }
 
+    for (let dot of Array.from(dots)) {
+        dot.className = 'slider__dot';
+    }
+
     if (activeSlide >= slideItem.length) {
         activeSlide = 0;
         slideItem[activeSlide].classList.add('slider__item_active');
+        dots[activeSlide].classList.add('slider__dot_active');
     } 
     
     slideItem[activeSlide].classList.add('slider__item_active');
+    dots[activeSlide].classList.add('slider__dot_active');
 }
 
 prev.onclick = function() {
@@ -26,10 +35,16 @@ prev.onclick = function() {
         slide.className = 'slider__item';
     }
 
+    for (let dot of Array.from(dots)) {
+        dot.className = 'slider__dot';
+    }
+
     if (activeSlide < 0) {
         activeSlide = slideItem.length - 1;
         slideItem[activeSlide].classList.add('slider__item_active');
+        dots[activeSlide].classList.add('slider__dot_active');
     }
 
     slideItem[activeSlide].classList.add('slider__item_active');
+    dots[activeSlide].classList.add('slider__dot_active');
 }
