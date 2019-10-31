@@ -17,16 +17,16 @@ class Game {
   }
 
   registerEvents() {
-
+    let i = this;
+    
     function toType(event){
       let keyboardSymbol = event.key.toLowerCase();
-      let currentSymbol = this.currentSymbol.textContent.toLowerCase();
+      let currentSymbol = i.currentSymbol.textContent.toLowerCase();
       if (keyboardSymbol === currentSymbol) {
-        this.success();
+        i.success();
       } else {
-        this.fail();
+        i.fail();
       }
-
     }
 
     document.addEventListener('keydown', toType);
