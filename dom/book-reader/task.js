@@ -14,10 +14,10 @@ for (let i=0; i < fontSize.length; i++) {
 
         for (let j=0; j < fontSize.length; j++) {
             
-            if (fontSize[j].classList.contains('font-size_active') && fontSize[j].classList.contains('font-size_big')) {
+            if (book.classList.contains('book_fs-big')) {
                 fontSize[j].classList.remove('font-size_active');
                 book.classList.remove('book_fs-big');
-            } else if (fontSize[j].classList.contains('font-size_active') && fontSize[j].classList.contains('font-size_small')) {
+            } else if (book.classList.contains('book_fs-small')) {
                 fontSize[j].classList.remove('font-size_active');
                 book.classList.remove('book_fs-small');
             } else if (fontSize[j].classList.contains('font-size_active')) {
