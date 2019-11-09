@@ -61,31 +61,21 @@ for (let i=0; i < bookColor.length; i++) {
     })
 }
 
-// const bookBg = document.querySelectorAll('.book__control_background a.color');
+const bookBg = document.querySelectorAll('.book__control_background a.color');
 
-// for (let i=0; i < bookBg.length; i++) {
-//     bookBg[i].addEventListener('click', function(event) {
-//         event.preventDefault();
+for (let i=0; i < bookBg.length; i++) {
+    bookBg[i].addEventListener('click', function(event) {
+        event.preventDefault();
+        let active = document.querySelector('.color_active');
+        active.classList.remove('color_active');
+        book.classList.remove('color_gray', 'color_black', 'color_white');
 
-//         for (let j=0; j < bookBg.length; j++) {
-            
-//             if (book.classList.contains('book_bg-gray')) {
-//                 bookBg[j].classList.remove('color_active');
-//                 book.classList.remove('book_bg-gray');
-//             } else if (book.classList.contains('book_bg-white')) {
-//                 bookBg[j].classList.remove('color_active');
-//                 book.classList.remove('book_bg-white');
-//              } else if (bookBg[j].classList.contains('color_active')) {
-//                 bookBg[j].classList.remove('color_active');
-//              }
 
-//         }
-
-//         bookBg[i].classList.add('color_active');
-//         if (bookBg[i].classList.contains('color_gray')) {
-//             book.classList.add('book_bg-gray');
-//         } else if (bookBg[i].classList.contains('color_black')) {
-//             book.classList.add('book_bg-white');
-//         }
-//     })
-// }
+        bookBg[i].classList.add('color_active');
+        if (bookBg[i].classList.contains('color_gray')) {
+            book.classList.add('color_gray');
+        } else if (bookBg[i].classList.contains('color_black')) {
+            book.classList.add('color_black');
+        }
+    })
+}
