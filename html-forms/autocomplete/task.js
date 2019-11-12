@@ -70,15 +70,18 @@ class Autocomplete {
   getMatches( text ) {
     const options = this.input.options;
     const matches = [];
-    for (let i=0; i < options.lenght; i++) {
+    for (let i=0; i < options.length; i++) {
       if (options[i].text.includes(text)) {
         matches.push({
           text: options[i].text,
           value: options[i].value
-        })
+        });
       }
     }
+    console.log(matches);
     return matches;
+
+    
   }
 }
 
