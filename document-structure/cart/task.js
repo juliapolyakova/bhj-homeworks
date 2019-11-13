@@ -34,7 +34,8 @@ function addProduct(event) {
         if (item.dataset.id === id) {
             let productCount = item.querySelector('.cart__product-count');  
             productCount.textContent = Number((productCount).innerText) + Number(count);
-        }
+            return false
+        }        
     }
 
     let content = `<div class="cart__product" data-id="${id}">
