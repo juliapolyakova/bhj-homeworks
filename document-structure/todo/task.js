@@ -17,16 +17,14 @@ function addTask(event) {
 
         taskList.insertAdjacentHTML('beforeEnd', newTask);
         text.value = '';
-
-        toDeleted();
     }
 }
 
-function toDeleted() {
-    taskList.addEventListener('click', (event) => {
+taskList.addEventListener('click', (event) => {
         event.preventDefault();
         if (event.target.classList.contains('task__remove')) {    
            event.target.parentElement.remove();
        }
     })
-}
+
+
